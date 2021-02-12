@@ -43,11 +43,13 @@ const Card = (article) => {
   
     
     
-    cardDiv.addEventListener("click", (e)=>{ //on click event on the div... log the article headline
+    cardDiv.addEventListener("click", (e)=>{ //on click event targeting the div... log the article headline
       console.log(sub["headline"]);
     })
     
-    const cardC = document.querySelector(".cards-container").appendChild(cardDiv);
+
+    document.querySelector(".cards-container").appendChild(cardDiv); //append the card the card container
+
   }) //closes forEach
 }//closes Card function
 
@@ -61,19 +63,17 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
   
-  const cards = document.querySelector(selector)
-
   axios.get(`https://lambda-times-api.herokuapp.com/articles`) //get the endpoint data
   .then(res =>{
 
-    Card(res.data.articles.javascript)
+    Card(res.data.articles.javascript) //give Card function these articles from the endpoint
     Card(res.data.articles.bootstrap)
     Card(res.data.articles.technology)
     Card(res.data.articles.jquery)
     Card(res.data.articles.node)
     
   })
-  .catch(err =>{
+  .catch(err =>{ //if there is an error, log it
     console.log(err);
   })
 

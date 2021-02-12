@@ -42,7 +42,7 @@ const tabsAppender = (selector) => {
   .then(res =>{
     tabs.appendChild(Tabs(res.data.topics));
   })
-  .catch(err =>{
+  .catch(err =>{ //if there is an error, log it
     console.log(err);
   })
 }
