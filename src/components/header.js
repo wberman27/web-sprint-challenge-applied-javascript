@@ -45,6 +45,6 @@ const headerAppender = (selector) => {
 
 }
 
-headerAppender(".header-container")
+//headerAppender(".header-container")
 
 export { Header, headerAppender }

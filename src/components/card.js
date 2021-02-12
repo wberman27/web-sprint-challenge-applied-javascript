@@ -17,6 +17,10 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  
+
+
+
 }
 
 const cardAppender = (selector) => {
