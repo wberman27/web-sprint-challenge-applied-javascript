@@ -11,20 +11,20 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-  const headerDiv = document.createElement("div");
+  const headerDiv = document.createElement("div"); //create elements to the dom
   const dateSpan = document.createElement("span");
   const titleHeader = document.createElement("h1");
   const tempSpan = document.createElement("span");
 
-  headerDiv.classList.add("header");
+  headerDiv.classList.add("header"); //add class names
   dateSpan.classList.add("date");
   tempSpan.classList.add("temp");
 
-  titleHeader.textContent = `${title}`;
+  titleHeader.textContent = `${title}`; //give text content
   dateSpan.textContent = `${date}`;
   tempSpan.textContent = `${temp}`;
 
-  headerDiv.appendChild(dateSpan);
+  headerDiv.appendChild(dateSpan); //structure elements on dom
   headerDiv.appendChild(titleHeader);
   headerDiv.appendChild(tempSpan);
 
@@ -41,7 +41,7 @@ const headerAppender = (selector) => {
   const charDegree = String.fromCharCode(176);
 
   const header = document.querySelector(selector)
-  header.appendChild(Header("Lambda Times", "Feb. 12th 2021", `16 ${charDegree}`))
+  header.appendChild(Header("Lambda Times", "Feb. 12th 2021", `16 ${charDegree}`)) //append header with Header function
 
 }
 

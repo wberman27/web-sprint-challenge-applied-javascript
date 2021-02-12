@@ -19,25 +19,15 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-
-  // axios.get(`https://lambda-times-api.herokuapp.com/articles`)
-  // .then(res =>{
-  //   console.log(res);
-  // })
-  // .catch(err =>{
-  //   console.log(err);
-  // })
-  // const cardDiv = document.createElement("div");
-  // cardDiv.classList.add("card");
   article.forEach(sub =>{    
-    const cardDiv = document.createElement("div");
+    const cardDiv = document.createElement("div"); //create these elements on the dom
     const headline = document.createElement("div");
     const author = document.createElement("div");
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
     const authorByText = document.createElement("span");
     
-    cardDiv.classList.add("card");
+    cardDiv.classList.add("card"); //adding class names
     headline.classList.add("headline");
     author.classList.add("author");
     imgContainer.classList.add("img-container");
@@ -45,7 +35,7 @@ const Card = (article) => {
     authorByText.textContent = `By ${sub["authorName"]}`;
     headline.textContent = `${sub["headline"]}`;
   
-    cardDiv.appendChild(headline);
+    cardDiv.appendChild(headline); //dom structuring
     cardDiv.appendChild(author);
     author.appendChild(imgContainer)
     imgContainer.appendChild(img)
@@ -53,13 +43,13 @@ const Card = (article) => {
   
     
     
-    cardDiv.addEventListener("click", (e)=>{
+    cardDiv.addEventListener("click", (e)=>{ //on click event on the div... log the article headline
       console.log(sub["headline"]);
     })
     
     const cardC = document.querySelector(".cards-container").appendChild(cardDiv);
-  })
-}
+  }) //closes forEach
+}//closes Card function
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -73,7 +63,7 @@ const cardAppender = (selector) => {
   
   const cards = document.querySelector(selector)
 
-  axios.get(`https://lambda-times-api.herokuapp.com/articles`)
+  axios.get(`https://lambda-times-api.herokuapp.com/articles`) //get the endpoint data
   .then(res =>{
 
     Card(res.data.articles.javascript)
