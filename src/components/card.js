@@ -48,7 +48,7 @@ const Card = (article) => {
     })
     
 
-    document.querySelector(".cards-container").appendChild(cardDiv); //append the card the card container
+    document.querySelector(".cards-container").appendChild(cardDiv); //append the card to the card-container
 
   }) //closes forEach
 }//closes Card function
